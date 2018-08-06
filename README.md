@@ -32,6 +32,7 @@
   Attention:
   
    I. the correct Archetype-Version one can be found at https://nexus.opendaylight.org 
+   
   II. if  Archetype-Version==*-SNAPSHOT 
   
        -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/
@@ -40,6 +41,7 @@
        -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.release/
 
  for example:
+ 
  mvn archetype:generate 
  -DarchetypeGroupId=org.opendaylight.controller 
  -DarchetypeArtifactId=opendaylight-startup-archetype 
