@@ -9,27 +9,34 @@
 
  (3)An appropriate Maven settings.xml file:
 
- Use opendaylight settings.xml to modify the maven ~/.m2/settings.xml: 
+ Use opendaylight settings.xml to modify the maven ~/.m2/settings.xml:
+ 
  cp -n ~/.m2/settings.xml{,.orig} ; wget -q -O - 
  https://raw.githubusercontent.com/opendaylight/odlparent/master/settings.xml > ~/.m2/settings.xml
 
  or specify the version of opendaylight, use carbon for example like this:
+ 
  cp -n ~/.m2/settings.xml{,.orig} ; \wget -q -O -  https://raw.githubusercontent.com/opendaylight/odlparent/stable/carbon/settings.xml > ~/.m2/settings.xml
 
 2.Create a hello project using Maven and an archetype called the opendaylight-startup-archetype
 
  mvn archetype:generate 
  -DarchetypeGroupId=org.opendaylight.controller 
- -DarchetypeArtifactId=opendaylight-startup-archetype
- -DarchetypeRepository=
-  https://nexus.opendaylight.org/content/repositories/<opendaylight.release | opendaylight.snapshot>/
- -DarchetypeCatalog=remote -DarchetypeVersion=<Archetype-Version>
-
-  <Archetype-Version>: the correct one can be found at https://nexus.opendaylight.org 
+ -DarchetypeArtifactId=opendaylight-startup-archetype 
+ -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/<opendaylight.release | opendaylight.snapshot>
+ -DarchetypeCatalog=remote 
+ -DarchetypeVersion=Archetype-Version
+ 
   
-  if  Archetype-Version==*-SNAPSHOT then 
+  Attention:
+  
+   I. the correct Archetype-Version one can be found at https://nexus.opendaylight.org 
+  
+  II. if  Archetype-Version==*-SNAPSHOT 
+  
       use -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/
-  else 
+  else:
+  
       use -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.release/
 
  for example:
