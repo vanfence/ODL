@@ -11,11 +11,13 @@
 
  Use opendaylight settings.xml to modify the maven ~/.m2/settings.xml:
  
- cp -n ~/.m2/settings.xml{,.orig} ; wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/master/settings.xml > ~/.m2/settings.xml
+ cp -n ~/.m2/settings.xml{,.orig} ; 
+ wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/master/settings.xml > ~/.m2/settings.xml
 
  or specify the version of opendaylight like this:
  
- cp -n ~/.m2/settings.xml{,.orig} ; \wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/stable/carbon/settings.xml > ~/.m2/settings.xml
+ cp -n ~/.m2/settings.xml{,.orig} ; 
+ wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/stable/carbon/settings.xml > ~/.m2/settings.xml
 
 2.Create a hello project using Maven and an archetype called the opendaylight-startup-archetype
 
@@ -30,13 +32,12 @@
   Attention:
   
    I. the correct Archetype-Version one can be found at https://nexus.opendaylight.org 
-  
   II. if  Archetype-Version==*-SNAPSHOT 
   
-      use -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/
+       -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/
   else:
   
-      use -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.release/
+       -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.release/
 
  for example:
  mvn archetype:generate 
