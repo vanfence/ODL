@@ -31,7 +31,7 @@
   
   Attention:
   
-   I. the correct Archetype-Version one can be found at https://nexus.opendaylight.org 
+   I. the correct Archetype-Version one can be found at https://nexus.opendaylight.org/#nexus-search;quick~opendaylight-startup-archetype
    
   II. if  Archetype-Version==*-SNAPSHOT 
   
