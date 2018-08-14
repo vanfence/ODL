@@ -79,11 +79,11 @@ Complier enviroment
 
 1. Oracle Java 8 JDK
 
-  a. pre-clean the java environment
+   a. pre-clean the java environment
    
       $ sudo apt-get removw openjdk*
      
-  b. download the jdk file
+   b. download the jdk file
    
       $ wget http://www.oracle.com/technetwork/java/javase/downlaods/jdk-8u101-linux-x64.tar.gz 
       
@@ -91,7 +91,7 @@ Complier enviroment
       
       $ tar -zxvf jdk-8u101-linux-x64.tar.gz
       
-  c. config the environment path(write the following path into ~/.bashrc or /etc/profile)
+   c. config the environment path(write the following path into ~/.bashrc or /etc/profile)
    
       export JAVA_HOME = /home/Applications/jdk1.8.0_101
       
@@ -110,9 +110,9 @@ Complier enviroment
  
  2. Maven 3.3.9
  
-   a. download the apache maven file 
+    a. download the apache maven file 
    
-   b. config the environment path(to ~./bashrc or /etc/profile)
+    b. config the environment path(to ~./bashrc or /etc/profile)
    
       export M2_Home = /home/Applications/apache-maven-3.3.9
       
@@ -124,7 +124,7 @@ Complier enviroment
       
       $ source ~./bashrc
       
-   c. check the maven
+    c. check the maven
    
       $ mvn -v
       
