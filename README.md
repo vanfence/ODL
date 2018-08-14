@@ -81,27 +81,27 @@ Complier enviroment
 
    a. pre-clean the java environment
    
-      $ sudo apt-get removw openjdk*
+       $ sudo apt-get removw openjdk*
      
    b. download the jdk file
    
-      $ wget http://www.oracle.com/technetwork/java/javase/downlaods/jdk-8u101-linux-x64.tar.gz 
+       $ wget http://www.oracle.com/technetwork/java/javase/downlaods/jdk-8u101-linux-x64.tar.gz 
       
-      $ mv  jdk-8u101-linux-x64.tar.gz  /home/Applications
+       $ mv  jdk-8u101-linux-x64.tar.gz  /home/Applications
       
-      $ tar -zxvf jdk-8u101-linux-x64.tar.gz
+       $ tar -zxvf jdk-8u101-linux-x64.tar.gz
       
    c. config the environment path(write the following path into ~/.bashrc or /etc/profile)
    
-      export JAVA_HOME = /home/Applications/jdk1.8.0_101
+       export JAVA_HOME = /home/Applications/jdk1.8.0_101
       
-      export JRE_HOME = $JAVA_HOME/jre
+       export JRE_HOME = $JAVA_HOME/jre
       
-      export CLASSPATH = .:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
+       export CLASSPATH = .:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
       
-      export PATH = $JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+       export PATH = $JAVA_HOME/bin:$JRE_HOME/bin:$PATH
       
-      $ source ~./bashrc / source /etc/profile
+       $ source ~./bashrc / source /etc/profile
     
   d. check the java 
     
@@ -114,28 +114,34 @@ Complier enviroment
    
     b. config the environment path(to ~./bashrc or /etc/profile)
    
-      export M2_Home = /home/Applications/apache-maven-3.3.9
+        export M2_Home = /home/Applications/apache-maven-3.3.9
       
-      export M2 = $M2_home/bin
+        export M2 = $M2_home/bin
       
-      export PATH=$M2:$PATH
+        export PATH=$M2:$PATH
       
-      MAVEN_OPTS = "-Xmx2048m -XX:MAxPermSize=512m"
+        MAVEN_OPTS = "-Xmx2048m -XX:MAxPermSize=512m"
       
-      $ source ~./bashrc
+        $ source ~./bashrc
       
     c. check the maven
    
-      $ mvn -v
+        $ mvn -v
       
       
  3. Git
  
-     first step : $ sudo apt-get install git
+     first step : 
+           
+           $ sudo apt-get install git
      
-     second step: export GIT_SSL_NO_VERIFY = 1  > ~./bashrc file(No need to verify the git)
+     second step: 
+            
+            export GIT_SSL_NO_VERIFY = 1  > ~./bashrc file(No need to verify the git)
      
-     third  step:  $ source ~/.bashrc
+     third  step:  
+     
+            $ source ~/.bashrc
      
       
    
