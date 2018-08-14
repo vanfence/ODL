@@ -3,38 +3,40 @@
 
 1.prequisites
 
- (1)Maven 3.1.1 or later
+  a.  Maven 3.1.1 or later
 
- (2)Java 7- or Java 8-compliant JDK
+  b.  Java 7- or Java 8-compliant JDK
 
- (3)An appropriate Maven settings.xml file:
+  c.  An appropriate Maven settings.xml file:
 
  Use opendaylight settings.xml to modify the maven ~/.m2/settings.xml
  
 
- $ cp -n ~/.m2/settings.xml{,.orig} ; 
+    $ cp -n ~/.m2/settings.xml{,.orig} ; /
  
- wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/master/settings.xml > ~/.m2/settings.xml
+      wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/master/settings.xml > ~/.m2/settings.xml
+ 
 
  or specify the version of opendaylight like this:
  
- $ cp -n ~/.m2/settings.xml{,.orig} ; 
  
- wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/stable/carbon/settings.xml > ~/.m2/settings.xml
+    $ cp -n ~/.m2/settings.xml{,.orig} ; /
+ 
+      wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/stable/carbon/settings.xml > ~/.m2/settings.xml
 
 2.Create a hello project using Maven and an archetype called the opendaylight-startup-archetype
 
- $ mvn archetype:generate 
+    $ mvn archetype:generate /
  
-  -DarchetypeGroupId=org.opendaylight.controller 
+      -DarchetypeGroupId=org.opendaylight.controller /
  
-  -DarchetypeArtifactId=opendaylight-startup-archetype 
+      -DarchetypeArtifactId=opendaylight-startup-archetype /
  
-  -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/<opendaylight.release | opendaylight.snapshot>
+      -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/<opendaylight.release | opendaylight.snapshot>/
  
-  -DarchetypeCatalog=remote 
+      -DarchetypeCatalog=remote /
  
-  -DarchetypeVersion=Archetype-Version
+      -DarchetypeVersion=Archetype-Version
  
   
   Attention:
@@ -50,17 +52,17 @@
 
  for example:
  
- $ mvn archetype:generate 
+     $ mvn archetype:generate /
  
-  -DarchetypeGroupId=org.opendaylight.controller 
+      -DarchetypeGroupId=org.opendaylight.controller /
  
-  -DarchetypeArtifactId=opendaylight-startup-archetype 
+      -DarchetypeArtifactId=opendaylight-startup-archetype /
  
-  -DarchetypeRepository= http://nexus.opendaylight.org/content/repositories/opendaylight.release/ 
+      -DarchetypeRepository= http://nexus.opendaylight.org/content/repositories/opendaylight.release/ /
  
-  -DarchetypeCatalog=remote  
+      -DarchetypeCatalog=remote  /
  
-  -DarchetypeVersion=1.3.0-Carbon (be the same version--carbon as the upper one in the settings.xml)
+      -DarchetypeVersion=1.3.0-Carbon (be the same version--carbon as the upper one in the settings.xml)
  
      
 3.Build the module and implement the HelloWorld RPC API:
