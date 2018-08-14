@@ -9,30 +9,32 @@
 
  (3)An appropriate Maven settings.xml file:
 
- Use opendaylight settings.xml to modify the maven ~/.m2/settings.xml:
+ Use opendaylight settings.xml to modify the maven ~/.m2/settings.xml
  
- cp -n ~/.m2/settings.xml{,.orig} ; 
+
+ $ cp -n ~/.m2/settings.xml{,.orig} ; 
  
  wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/master/settings.xml > ~/.m2/settings.xml
 
  or specify the version of opendaylight like this:
  
- cp -n ~/.m2/settings.xml{,.orig} ; 
+ $ cp -n ~/.m2/settings.xml{,.orig} ; 
  
  wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/stable/carbon/settings.xml > ~/.m2/settings.xml
 
 2.Create a hello project using Maven and an archetype called the opendaylight-startup-archetype
 
- mvn archetype:generate 
- -DarchetypeGroupId=org.opendaylight.controller 
+ $ mvn archetype:generate 
  
- -DarchetypeArtifactId=opendaylight-startup-archetype 
+  -DarchetypeGroupId=org.opendaylight.controller 
  
- -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/<opendaylight.release | opendaylight.snapshot>
+  -DarchetypeArtifactId=opendaylight-startup-archetype 
  
- -DarchetypeCatalog=remote 
+  -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/<opendaylight.release | opendaylight.snapshot>
  
- -DarchetypeVersion=Archetype-Version
+  -DarchetypeCatalog=remote 
+ 
+  -DarchetypeVersion=Archetype-Version
  
   
   Attention:
@@ -48,22 +50,25 @@
 
  for example:
  
- mvn archetype:generate 
+ $ mvn archetype:generate 
  
- -DarchetypeGroupId=org.opendaylight.controller 
+  -DarchetypeGroupId=org.opendaylight.controller 
  
- -DarchetypeArtifactId=opendaylight-startup-archetype 
+  -DarchetypeArtifactId=opendaylight-startup-archetype 
  
- -DarchetypeRepository= http://nexus.opendaylight.org/content/repositories/opendaylight.release/ 
+  -DarchetypeRepository= http://nexus.opendaylight.org/content/repositories/opendaylight.release/ 
  
- -DarchetypeCatalog=remote  
+  -DarchetypeCatalog=remote  
  
- -DarchetypeVersion=1.3.0-Carbon (be the same version--carbon as the upper one in the settings.xml)
+  -DarchetypeVersion=1.3.0-Carbon (be the same version--carbon as the upper one in the settings.xml)
  
      
 3.Build the module and implement the HelloWorld RPC API:
    
-   search https://docs.opendaylight.org/en/stable-oxygen/developer-guide/developing-apps-on-the-opendaylight-controller.html   
+   search 
+   
+   https://docs.opendaylight.org/en/stable-oxygen/developer-guide/developing-apps-on-the-opendaylight-controller.html
+   
    for appropriate operations
 
 
@@ -72,11 +77,11 @@ Complier enviroment
 
 1. Oracle Java 8 JDK
 
-   a. pre-clean the java environment: 
+  a. pre-clean the java environment
    
       $ sudo apt-get removw openjdk*
      
-   b. download the jdk file:
+  b. download the jdk file
    
       $ wget http://www.oracle.com/technetwork/java/javase/downlaods/jdk-8u101-linux-x64.tar.gz 
       
@@ -84,7 +89,7 @@ Complier enviroment
       
       $ tar -zxvf jdk-8u101-linux-x64.tar.gz
       
-   c. config the environment path(write the following path into ~/.bashrc or /etc/profile)
+  c. config the environment path(write the following path into ~/.bashrc or /etc/profile)
    
       export JAVA_HOME = /home/Applications/jdk1.8.0_101
       
@@ -96,7 +101,7 @@ Complier enviroment
       
       $ source ~./bashrc / source /etc/profile
     
-   d. check the java 
+  d. check the java 
     
       $ java -version
       
@@ -120,6 +125,7 @@ Complier enviroment
    c. check the maven
    
       $ mvn -v
+      
       
  3. Git
  
