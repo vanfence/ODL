@@ -81,7 +81,7 @@ Complier enviroment
 
    a. pre-clean the java environment
    
-       $ sudo apt-get removw openjdk*
+       $ sudo apt-get remove openjdk*
      
    b. download the jdk file
    
@@ -101,7 +101,9 @@ Complier enviroment
       
        export PATH = $JAVA_HOME/bin:$JRE_HOME/bin:$PATH
       
-       $ source ~./bashrc / source /etc/profile
+       $ source ~/.bashrc / source /etc/profile
+       
+       // can be writen into /etc/environment,but we do not suggest this configuration
     
   d. check the java 
     
