@@ -121,9 +121,9 @@ Complier enviroment
        
        Note:the configuration can be writen into /etc/environment,but we do not suggest this configuration
     
-  d. check the java 
+    d. check the java 
     
-      $ java -version
+       $ java -version
       
  
  2. Maven 3.3.9
@@ -138,13 +138,13 @@ Complier enviroment
       
         export PATH=$M2:$PATH
       
-        MAVEN_OPTS = "-Xmx2048m -XX:MAxPermSize=512m"
+        MAVEN_OPTS = "-Xmx2048m -XX:MAxPermSize=512m" (optional)
       
         $ source ~./bashrc
       
     c. check the maven
    
-        $ mvn -v
+        $ mvn -version
       
       
  3. Git
