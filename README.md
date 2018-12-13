@@ -8,13 +8,19 @@
   b.  Java 7- or Java 8-compliant JDK
 
   c.  An appropriate Maven settings.xml file:
-
- Use opendaylight settings.xml to modify the maven ~/.m2/settings.xml
+  
+   Use opendaylight settings.xml to modify the maven ~/.m2/settings.xml.
+   OpenDaylight maintains its own repositories outside of Maven Central, which means maven cannot resolve OpenDaylight           artifacts  by default. Since OpenDaylight is organized as multiple inter-dependent projects, building a particular project       usually means pulling in some artifacts. In order to make this work, your maven installation needs to know the location of       OpenDaylight repositories and has to taught to use them.
+    This is achieved by making sure ~/.m2/settings.xml looks something like the copy kept in odlparent
  
-
     $ cp -n ~/.m2/settings.xml{,.orig} ; /
  
       wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/master/settings.xml > ~/.m2/settings.xml
+      
+      or
+      
+      (suggest) copy https://github.com/opendaylight/odlparent/blob/master/settings.xml setting.xml > ~/.m2/settings.xml
+      
  
 
  or specify the version of opendaylight like this:
@@ -23,6 +29,16 @@
     $ cp -n ~/.m2/settings.xml{,.orig} ; /
  
       wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/stable/carbon/settings.xml > ~/.m2/settings.xml
+      
+ Attention:
+    If you get this Failure:
+    
+       [WARNING] Error initializing: org.codehaus.plexus.velocity.DefaultVelocityComponent
+       java.lang.NoClassDefFoundError: org/apache/commons/lang/StringUtils
+       
+   Add this dependency in the:
+  
+        ~/.m2/repository/org/apache/maven/plugins/maven-archetype-plugin/{version}/maven-archetype-plugin-{version}.pom
 
 2.Create a hello project using Maven and an archetype called the opendaylight-startup-archetype
 
@@ -46,7 +62,7 @@
   II. if  Archetype-Version==*-SNAPSHOT 
   
        -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/
-  else:
+  else(suggest):
   
        -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.release/
 
@@ -87,13 +103,13 @@ Complier enviroment
    
        $ wget http://www.oracle.com/technetwork/java/javase/downlaods/jdk-8u101-linux-x64.tar.gz 
       
-       $ mv  jdk-8u101-linux-x64.tar.gz  /home/Applications
+       $ mv  jdk-8u101-linux-x64.tar.gz  /usr/lib/jvm
       
        $ tar -zxvf jdk-8u101-linux-x64.tar.gz
       
-   c. config the environment path(write the following path into ~/.bashrc or /etc/profile)
+   c. config java environment (write the following configuration into ~/.bashrc or /etc/profile,take /etc/profile for example)
    
-       export JAVA_HOME = /home/Applications/jdk1.8.0_101
+       export JAVA_HOME = /usr/lib/jvm/jdk1.8.0_101
       
        export JRE_HOME = $JAVA_HOME/jre
       
@@ -101,9 +117,9 @@ Complier enviroment
       
        export PATH = $JAVA_HOME/bin:$JRE_HOME/bin:$PATH
       
-       $ source ~/.bashrc / source /etc/profile
+       $ source /etc/profile
        
-       // can be writen into /etc/environment,but we do not suggest this configuration
+       Note:the configuration can be writen into /etc/environment,but we do not suggest this configuration
     
   d. check the java 
     
@@ -116,7 +132,7 @@ Complier enviroment
    
     b. config the environment path(to ~./bashrc or /etc/profile)
    
-        export M2_Home = /home/Applications/apache-maven-3.3.9
+        export M2_Home = /usr/lib/jvm/apache-maven-3.3.9
       
         export M2 = $M2_home/bin
       
@@ -135,7 +151,7 @@ Complier enviroment
  
      first step : 
            
-           $ sudo apt-get install git
+           $ sudo apt-get install git-core
      
      second step: 
             
@@ -144,6 +160,12 @@ Complier enviroment
      third  step:  
      
             $ source ~/.bashrc
+            
+ 4.Reference
+    
+    1.  https://wiki.opendaylight.org/view/GettingStarted:Development_Environment_Setup
+    2.  https://blog.csdn.net/zswang9/article/details/80643616
+    
      
       
    
