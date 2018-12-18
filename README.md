@@ -48,7 +48,7 @@
  
       -DarchetypeArtifactId=opendaylight-startup-archetype /
  
-      -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/<opendaylight.release | opendaylight.snapshot>/
+      -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/<Snapshot-type>/
  
       -DarchetypeCatalog=remote /
  
@@ -68,6 +68,13 @@
 
  for example:
  
+     For the Carbon snapshot use Snapshot-type=opendaylight.release Archetype-Version=1.3.0-carbon
+     For Boron "SR1" use Snapshot-type=opendaylight.release Archetype-Version=1.2.0-Boron-SR1
+     For the Boron snapshot use Snapshot-type= opendaylight.snapshot Archetype-Version=1.2.2-SNAPSHOT
+ 
+ 
+ for example:
+ 
      $ mvn archetype:generate /
  
       -DarchetypeGroupId=org.opendaylight.controller /
@@ -80,7 +87,7 @@
  
       -DarchetypeVersion=1.3.0-Carbon (be the same version--carbon as the upper one in the settings.xml)
  
-     
+
 3.Build the module and implement the HelloWorld RPC API:
    
    search 
